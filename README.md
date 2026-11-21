@@ -1,11 +1,19 @@
 # Customer Churn Prediction System
 
-## Project Overview
-The Customer Churn Prediction System is a Machine Learning project that predicts whether a customer is likely to leave a telecom company.
+A Machine Learning project that predicts whether a telecom customer is likely to leave the company using customer demographics, subscription details and billing information.
 
-It uses customer information, service subscriptions, contract details and billing information to identify potential customer churn.
+## Application Preview
+
+![Customer Churn Prediction Dashboard](reports/dashboard.png)
+
+## Project Overview
+
+Customer churn is a major challenge for telecom companies. This project uses machine learning classification algorithms to identify customers who are likely to discontinue their services.
+
+The system includes data preprocessing, exploratory data analysis, model training, evaluation and an interactive Streamlit application.
 
 ## Technologies Used
+
 - Python
 - Pandas and NumPy
 - Matplotlib and Seaborn
@@ -13,8 +21,17 @@ It uses customer information, service subscriptions, contract details and billin
 - Streamlit
 - Joblib
 
+## Dataset
+
+- Dataset: IBM Telco Customer Churn
+- Total records: 7,043
+- Original features: 21
+- Target variable: Churn (Yes/No)
+
 ## Machine Learning Models
-Four classification algorithms were implemented and compared:
+
+Four classification algorithms were trained and compared:
+
 1. Logistic Regression
 2. Decision Tree
 3. Random Forest
@@ -22,24 +39,27 @@ Four classification algorithms were implemented and compared:
 
 ## Model Performance
 
-| Model | Accuracy | F1 Score |
-|---|---:|---:|
-| Logistic Regression | 73.81% | 61.36% |
-| Decision Tree | 73.17% | 49.06% |
-| Random Forest | 76.37% | 58.22% |
-| Gradient Boosting | 80.62% | 58.95% |
+| Model | Accuracy | Precision | Recall | F1 Score | ROC AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 73.81% | 50.43% | 78.34% | **61.36%** | 84.13% |
+| Decision Tree | 73.17% | 49.46% | 48.66% | 49.06% | 65.37% |
+| Random Forest | 76.37% | 54.85% | 62.03% | 58.22% | 82.27% |
+| Gradient Boosting | **80.62%** | **67.35%** | 52.41% | 58.95% | **84.32%** |
 
 Logistic Regression was selected as the final model based on its highest F1 Score.
 
-## Features
+## Key Features
+
 - Customer data cleaning and preprocessing
-- Exploratory Data Analysis
-- Machine Learning model training
-- Model comparison and evaluation
-- Customer churn prediction through a Streamlit web application
-- Churn probability display
+- Exploratory Data Analysis (EDA)
+- Training and comparison of four ML algorithms
+- Model evaluation using classification metrics
+- Customer churn prediction
+- Churn probability visualization
+- Interactive Streamlit dashboard
 
 ## Project Structure
+
 ```text
 customer-churn-prediction/
 ├── app/
@@ -50,6 +70,15 @@ customer-churn-prediction/
 ├── models/
 │   └── best_churn_model.pkl
 ├── reports/
+│   ├── dashboard.png
+│   ├── churn_distribution.png
+│   ├── churn_by_contract.png
+│   ├── monthly_charges.png
+│   ├── churn_by_payment.png
+│   ├── correlation_heatmap.png
+│   ├── model_comparison.csv
+│   ├── confusion_matrix.csv
+│   └── classification_report.txt
 ├── src/
 │   ├── inspect_data.py
 │   ├── data_cleaning.py
@@ -63,36 +92,51 @@ customer-churn-prediction/
 ## How to Run the Project
 
 ### 1. Clone the repository
+
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Keerthana2105-byte/customer-churn-prediction.git
+cd customer-churn-prediction
 ```
 
 ### 2. Install dependencies
+
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### 3. Train the model
+### 3. Train the machine learning model
+
 ```bash
 python src/train_model.py
 ```
 
-### 4. Run the Streamlit application
+### 4. Launch the Streamlit application
+
 ```bash
 python -m streamlit run app/app.py
 ```
 
-## Application
-The application accepts customer details and displays the predicted churn status and churn probability.
+Open `http://localhost:8501` in your browser.
 
 ## Learning Outcomes
+
 - Data preprocessing and feature engineering
-- Exploratory data analysis
-- Classification algorithms
+- Exploratory data analysis and visualization
+- Machine learning classification techniques
 - Model evaluation and comparison
 - Building an interactive ML application
+- Using Git and GitHub for project management
+
+## Future Enhancements
+
+- Improve model performance through hyperparameter tuning
+- Add customer churn analytics and visual reports
+- Deploy the application online
+- Add more advanced machine learning algorithms
 
 ## Author
-Keerthana
 
-B.Tech Computer Science and Engineering
+**Keerthana**  
+B.Tech – Computer Science and Engineering
+
+[GitHub Profile](https://github.com/Keerthana2105-byte)
